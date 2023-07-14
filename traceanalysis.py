@@ -295,6 +295,9 @@ def get_average_largest_connected_component():
     l = []
     for components in connected_components_log.values():
         l.append(max([len(x) for x in components]))
+    
+    if len(l) == 0:
+        return 0
 
     return sum(l)/len(l)
 
@@ -318,6 +321,10 @@ def log_number_of_connected_components():
 
 def get_average_number_of_connected_components():
     l = [len(x) for x in connected_components_log.values()]
+
+    if len(l) == 0:
+        return 0
+
     return sum(l) / len(l)
 
 
